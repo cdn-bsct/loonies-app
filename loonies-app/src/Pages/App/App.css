@@ -1,13 +1,14 @@
 .App {
   text-align: center;
   height: 100%;
-  color: #5f7782 ;
+  background-color: #f8fad5 ;
 }
 
 .HomePage {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  padding: 0px 5px;
+  grid-template-columns: 2fr 4fr;
   grid-template-rows: 1fr;
   background-color: var(--white);
   border-radius: 2vmin;
@@ -15,6 +16,7 @@
 
 .HomePage aside {
   display: flex;
+  padding-right: 8px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -22,23 +24,26 @@
 
 .dashboard-menu {
   height:100vh;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: #b4c1c5;
+  width: 90%;
+  padding: 8px;
+  border: 2px solid #b3e7dc;;
+  border-radius: 15px;
+  background-color: #b3e7dc;
   margin-top: 5px;
 }
 
 .details-menu {
   font-family: 'Lucida Grande';
   height:100vh;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: #b4c1c5;
+  border: 2px solid #b3e7dc;;
+  border-radius: 15px;
+  background-color: #b3e7dc;
   margin-top: 5px;
 }
 
 hr {
   width: 95%;
+  color: #6c0102;
 }
 
 .details-nav {
@@ -49,16 +54,17 @@ hr {
 
 .details-navlinks {
   text-decoration: none;
-  color: #c78a44 ;
+  color: #6c0102 ;
 }
 
-.details-titlebox {
+.titlebox {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0px 8px;
 }
 
-.details-listbox {
+.listbox {
   border: 1px solid black;
   border-radius: 10px;
   padding: 5px;
@@ -66,9 +72,35 @@ hr {
 
 .listbox-cards {
   display: flex;
+  margin: 2px 0px;
   justify-content: space-between;
   border: 1px solid black;
   border-radius: 5px;
   padding: 0px 8px;
+}
+
+.progress-tracker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.progress-bar {
+  display: inline-block;
+  background-color: aliceblue;
+  height: 20px;
+  width: 95%;
+}
+
+.progress{
+  background-color: #a6b401;
+  height: 100%;
+  width: 35%;
+}
+
+.progress-numbers {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
 }
 
