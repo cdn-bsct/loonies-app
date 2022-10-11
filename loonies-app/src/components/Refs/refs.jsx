@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import './details.css'
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Details(props) {
+export default function Refs(props) {
     return (
         <div className="details-menu">
             <nav>
@@ -10,9 +9,9 @@ export default function Details(props) {
                     <Link to='/earn' className='details-navlinks'>Earn</Link>
                     <Link to='/spend' className='details-navlinks'>Spend</Link>
                     <Link to='/save' className='details-navlinks'>Save</Link>
-                    <Link to='/refs' className='details-navlinks'>Refs</Link>
+                    <Link to='/home/refs' className='details-navlinks'>Refs</Link>
                 </ul>
             </nav>
         </div>
-    );
+    )
 }

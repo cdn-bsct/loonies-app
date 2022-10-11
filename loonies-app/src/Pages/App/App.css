@@ -4,5 +4,71 @@
   color: #5f7782 ;
 }
 
+.HomePage {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  background-color: var(--white);
+  border-radius: 2vmin;
+}
 
-/* Sunburst: #c78a44 | Sunset: #d8b26e | Cloud: #dad5d2 | Sea: #b4c1c5 | Deep Sea: #5f7782 */
+.HomePage aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-menu {
+  height:100vh;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #b4c1c5;
+  margin-top: 5px;
+}
+
+.details-menu {
+  font-family: 'Lucida Grande';
+  height:100vh;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #b4c1c5;
+  margin-top: 5px;
+}
+
+hr {
+  width: 95%;
+}
+
+.details-nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.details-navlinks {
+  text-decoration: none;
+  color: #c78a44 ;
+}
+
+.details-titlebox {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 8px;
+}
+
+.details-listbox {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.listbox-cards {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0px 8px;
+}
+

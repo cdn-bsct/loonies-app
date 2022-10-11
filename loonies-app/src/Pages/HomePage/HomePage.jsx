@@ -9,7 +9,7 @@ export default function HomePage(props) {
             <aside>
                 <Dashboard />
             </aside>
-            <Details />
+                <Details />
         </main>
     )
 }
