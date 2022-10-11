@@ -1,0 +1,37 @@
+hr {
+    width: 95%;
+}
+
+.details-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.details-navlinks {
+    text-decoration: none;
+    color: #c78a44 ;
+}
+
+.details-titlebox {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8px;
+}
+
+.details-listbox {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.listbox-cards {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0px 8px;
+}
+
+
+/* Sunburst: #c78a44 | Sunset: #d8b26e | Cloud: #dad5d2 | Sea: #b4c1c5 | Deep Sea: #5f7782 */

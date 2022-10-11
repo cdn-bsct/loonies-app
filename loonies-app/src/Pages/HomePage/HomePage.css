@@ -1,0 +1,35 @@
+
+.HomePage {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: 1fr;
+    background-color: var(--white);
+    border-radius: 2vmin;
+  }
+  
+  .HomePage aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dashboard-menu {
+    height:100vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #b4c1c5;
+    margin-top: 5px;
+  }
+
+  .details-menu {
+    font-family: 'Lucida Grande';
+    height:100vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #b4c1c5;
+    margin-top: 5px;
+  }
+
+  /* Sunburst: #c78a44 | Sunset: #d8b26e | Cloud: #dad5d2 | Sea: #b4c1c5 | Deep Sea: #5f7782 */
