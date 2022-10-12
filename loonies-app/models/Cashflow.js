@@ -6,7 +6,6 @@ const cashflowSchema = new Schema ({
     category: {type: String, required: true},
     amount: {type: Number, required: true},
     type: {type: String, required: true},
-
     
     user: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {

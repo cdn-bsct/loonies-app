@@ -7,8 +7,6 @@ const savingGoalsSchema = new Schema ({
     
 
     user: {type: Schema.Types.ObjectId, ref: 'User'},
-    cashflow: {type: Schema.Types.ObjectId, ref: 'Cashflow'},
-    survey: {type: Schema.Types.ObjectId, ref: 'Survey'},
 }, {
     timestamps: true,
 })
