@@ -12,20 +12,36 @@ import AuthPage from '../AuthPage/AuthPage';
 
 class App extends Component {
   state = {
-    user:null,
+    user: null,
   }
 
   setUserInState = (incomingUserData) => {
+    console.log(incomingUserData)
     this.setState({ user: incomingUserData})
   }
+
+  componentDidMount() { 
+    let token = localStorage.getItem('token')
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1]))
+      if (payload.exp < Date.now() / 1000) {
+        localStorage.removeItem('token')
+        token= null;
+      } else {
+        let userDoc = payload.user
+        this.setState({ user: userDoc })
+      }
+    }
+   }
+
   
   render() {
     return (
-      <div className="App">
+      <main className="App">
         {this.state.user ?
         <Switch>
           <Route path='/earn' element ={<EarnPage />} />
-          <Route path='*' element ={<SavePage />} />
+          <Route path='/*' element ={<SavePage />} />
         </Switch>
         :
         <AuthPage setUserInState={this.setUserInState}/>
@@ -37,7 +53,7 @@ class App extends Component {
          <Route path='/refs' element ={<RefsPage />} /> 
     
         </Routes>
-      </div>
+      </main>
     );
   }
 }

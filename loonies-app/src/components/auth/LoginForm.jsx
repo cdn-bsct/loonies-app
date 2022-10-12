@@ -36,7 +36,7 @@ export default class Login extends Component {
             this.props.setUserInState(userDoc)
 
         } catch (err) {
-            console.loh('Login Form Error', err)
+            console.log('Login Form Error', err)
             this.setState({ error: 'Login Failed - Try Again'})
         }
     }
