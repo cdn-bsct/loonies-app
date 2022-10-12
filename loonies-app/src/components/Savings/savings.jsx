@@ -18,7 +18,7 @@ export default class Savings extends Component {
     render() {
         return (
             <div className="save-form">
-                <form action="" autoComplete="off" onSubmit={e => this.props.handleSubmit(e)}>
+                <form action="" autoComplete="off" onSubmit={e => this.props.handleSubmit(e, this.state.goal)}>
                     <input type="Number" step="any" name="amount" value={this.state.amount} onChange={this.handleChange} className="saving-input" placeholder={this.state.amount}/>
                     <button type="Submit">Add Savings!</button>
                 </form>

@@ -8,27 +8,23 @@ import Savings from "../Savings/savings";
 import SaveListItem from "../SaveListItem/SaveListItem";
 
 export default class Save extends Component {
-    state = {
-        savings: [],
-    }
 
-
-    handleSubmit = async (evt) => {
+    
+    handleSubmit = async (evt, goal) => {
         evt.preventDefault();
-        console.log(evt.target[0].value)
         try {
-            const fetchResponse = await fetch('api/savinggoals/savings/create', {
+            const fetchResponse = await fetch('/api/savinggoals/savings/create', {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     amount: evt.target[0].value,
-                    goal: this.state.goal
+                    goal: goal
                 }) 
             })
 
             if (!fetchResponse.ok) throw new Error('Fetch Failed - Bad Request')
             let response = await fetchResponse.json()
-            this.setState({...this.state, savings: response})
+            this.setState({...this.state, goals: response})
         } catch (err) {
             console.log('Add Saving Form Failed', err)
             this.setState({ error : 'Add Save Failed - Try Again'})
@@ -38,8 +34,6 @@ export default class Save extends Component {
     render () {
         let goals = this.props.goals
         let dropMenu =[]
-        let savingsArr = this.state.savings.map(saving => 
-            <SaveListItem saving={saving}/>)
 
         goals.forEach((el, idx) => {
             if (!(idx == 0)) dropMenu.push(el)
@@ -81,12 +75,10 @@ export default class Save extends Component {
                     </div>
 
                     <div className='listbox'>
-                      {savingsArr.length > 0 ?
-                        savingsArr
-                        :
-                        <span className="No Savings">You haven't saved toward your goal...</span>  
-                        }
+                      {goals[0] && goals[0].savings.map(el => <SaveListItem saving={el} />) }        
+                      {/* <span className="No Savings">You haven't saved toward your goal...</span> */}
                     </div>
+
                     <br /><hr />
                     <footer className='save-footer'>
                         <Savings goal={this.props.goals[0]} handleSubmit={this.handleSubmit}/>
