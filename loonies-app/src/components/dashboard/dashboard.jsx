@@ -1,4 +1,5 @@
 import React from 'react'
+import LogOut from '../LogOut/LogOut';
 
 export default function Dashboard(props) {
     return (
@@ -10,6 +11,8 @@ export default function Dashboard(props) {
             <h1>Monthly Savings</h1>
             <hr />
             <h1>Net Cashflow</h1>
+            <hr />
+            <LogOut user={props.user}/>
         </div>
     );
 }

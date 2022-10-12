@@ -8,7 +8,7 @@ export default function RefPage(props) {
     return (
         <main className='HomePage'>
             <aside>
-                <Dashboard />
+                <Dashboard user={this.props.user}/>
             </aside>
                 <Refs />
         </main> 

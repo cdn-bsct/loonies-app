@@ -27,13 +27,18 @@ async function create(req, res) {
 
 async function login(req, res) {
     try {
+        console.log(req.body.password)
         const user = await User.find({ email: req.body.email })
+        console.log(user)
+        const match = await bcrypt.compare(req.body.password, user.password)
 
-        if (!(await bcrypt.compare(req.body.password, user.password))) throw new Error();
-
-        const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' })
-        res.status(200).json(token)
-    }catch (err){
+        if (match) {
+            const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' })
+            res.json(token)
+        } else {
+            throw new Error()
+        }
+    } catch (err){
         res.status(400).json('Bad Credentials')
     }
 }
