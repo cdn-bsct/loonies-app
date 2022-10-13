@@ -7,8 +7,9 @@ import Signup from "../../components/auth/SignupForm";
 
 export default class AuthPage extends Component {
     state = {
-        showLogin: true,
+        showLogin: false,
     }
+    
     render(){
         return (
             <main className='AuthPage'>

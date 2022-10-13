@@ -8,7 +8,7 @@ export default function EarnPage(props) {
     return (
         <main className='HomePage'>
             <aside>
-                <Dashboard user={this.props.user}/>
+            <Dashboard user={this.props.user} handleLogout={this.props.logout}/>
             </aside>
                 <Earn />
         </main> 
