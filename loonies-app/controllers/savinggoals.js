@@ -12,7 +12,7 @@ async function deleteSaving(req, res) {
     let saving = goal.savings.find(el => el._id == req.body.saving)
     goal.savings.pop(saving)
     goal.save()
-    res.status(200).json()
+    res.status(200).json(goal)
 }
 
 async function create(req, res) {

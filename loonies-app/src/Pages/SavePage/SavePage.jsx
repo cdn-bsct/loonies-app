@@ -16,6 +16,10 @@ export default class SavePage extends Component {
         this.setState({savings: saved})
     }
 
+    handleDeleteSave = async (res) => {
+        let deleted = res.savings 
+        this.setState({savings: deleted})
+    }
     async componentDidMount() { 
         try {
             let jwt = localStorage.getItem('token')
@@ -39,7 +43,13 @@ export default class SavePage extends Component {
                 <aside>
                     <Dashboard user={this.props.user} handleLogout={this.props.logout}/>
                 </aside>
-                    <Save user={this.props.user} goals={this.state.goals} savings={this.state.savings} handleAddSave={this.handleAddSave}/>
+                    <Save 
+                        user={this.props.user} 
+                        goals={this.state.goals} 
+                        savings={this.state.savings} 
+                        handleAddSave={this.handleAddSave}
+                        handleDeleteSave={this.handleDeleteSave}
+                    />
             </main> 
         )
 

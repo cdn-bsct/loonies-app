@@ -22,7 +22,7 @@ export default class Save extends Component {
             })
 
             if (!fetchResponse.ok) throw new Error('Fetch Failed - Bad Request')
-            
+
             let response = await fetchResponse.json()
             this.props.handleAddSave(response)
            
@@ -43,13 +43,20 @@ export default class Save extends Component {
                 goal: goal
             })
         })
-
+        let response = await fetchResponse.json()
+        this.props.handleDeleteSave(response)
         // if (!fetchResponse.ok) throw new Error('Fetch Failed - BadRequest')
     }
 
     render () {
         let goals = this.props.goals
         let dropMenu =[]
+        let currSaved = 0
+        let barWidth = 0
+
+        this.props.savings.forEach((el) => {
+            currSaved += el.amount
+        })
 
         goals.forEach((el, idx) => {
             if (!(idx === 0)) dropMenu.push(el)
@@ -82,10 +89,11 @@ export default class Save extends Component {
                     <hr /> <br />
                     <div className="progress-tracker">
                         <div className="progress-bar">
-                            <div className="progress"></div>
+                            
+                            <div className="progress" style={{width: currSaved / goals[0].amount * 100 + '%'}}></div>
                         </div> 
                         <div className="progress-numbers">
-                            <h3>Current Saved</h3>
+                            <h3>${currSaved}</h3>
                             <h3>${goals[0].amount}</h3>
                         </div>
                     </div>
