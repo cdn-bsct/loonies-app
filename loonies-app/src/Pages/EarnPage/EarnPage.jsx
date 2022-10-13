@@ -16,8 +16,7 @@ export default class EarnPage extends Component {
     }
 
     handleDeleteCashflow = async (res) => {
-        let deleted = res.income
-        this.setState({income: deleted})
+        this.setState({income: res.income})
     }
 
     async componentDidMount() { 

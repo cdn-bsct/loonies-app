@@ -32,6 +32,28 @@ export default class Save extends Component {
         }
     }
 
+    handleCreate = async (evt, user) => {
+        evt.preventDefault();
+        try {
+            const fetchResponse = await fetch('/api/savinggoals/create', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: evt.target.name.value,
+                    amount: evt.target.amount.value,
+                    user: user
+                }) 
+            })
+
+            if (!fetchResponse.ok) throw new Error('Fetch Failed - Bad Request')
+            let response = await fetchResponse.json()
+            this.props.handleAddGoal(response)
+        } catch (err) {
+            console.log('Add Saving Form Failed', err)
+            this.setState({ error : 'Add Save Failed - Try Again'})
+        }
+    }
+
     handleDelete = async (evt, save, goal) => {
         evt.preventDefault();
         const fetchResponse = await fetch('/api/savinggoals/savings/delete', {
@@ -51,9 +73,11 @@ export default class Save extends Component {
         let dropMenu =[]
         let currSaved = 0
 
-        this.props.savings.forEach((el) => {
-            currSaved += el.amount
-        })
+        if (this.props.savings.length > 0) {
+            this.props.savings.forEach((el) => {
+                currSaved += el.amount
+            })
+        }
 
         goals.forEach((el, idx) => {
             if (!(idx === 0)) dropMenu.push(el)
@@ -104,7 +128,7 @@ export default class Save extends Component {
                     </div>
 
                     <br /><hr />
-                    <footer className='save-footer'>
+                    <footer className='earn-footer'>
                         <Savings goal={this.props.goals[0]} handleSubmit={this.handleSubmit}/>
                     </footer>
                 </>
@@ -113,7 +137,10 @@ export default class Save extends Component {
                     <h1>You don't have any saving goals...</h1>
                     <h4>You should add one!</h4>
                     <hr /><br />
-                    <SaveForm user={this.props.user} />
+                    <SaveForm 
+                        user={this.props.user} 
+                        handleCreate={this.handleCreate}
+                    />
                 </div>
                 }
             </div>

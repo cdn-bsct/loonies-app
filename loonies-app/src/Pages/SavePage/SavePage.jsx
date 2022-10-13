@@ -16,6 +16,10 @@ export default class SavePage extends Component {
         this.setState({savings: saved})
     }
 
+    handleAddGoal = async (res) => {
+        this.setState({goal: res})
+    }
+
     handleDeleteSave = async (res) => {
         let deleted = res.savings 
         this.setState({savings: deleted})
@@ -49,6 +53,7 @@ export default class SavePage extends Component {
                         savings={this.state.savings} 
                         handleAddSave={this.handleAddSave}
                         handleDeleteSave={this.handleDeleteSave}
+                        handleAddGoal={this.handleAddGoal}
                     />
             </main> 
         )

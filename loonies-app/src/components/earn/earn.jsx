@@ -46,7 +46,10 @@ export default class Earn extends Component {
     }
 
     render() {
-
+        let totalCashIn = 0
+        this.props.income.forEach((el) => {
+            totalCashIn += el.amount
+        })
         return (
         <div className="details-menu">
             <nav>
@@ -60,7 +63,7 @@ export default class Earn extends Component {
             <div>
                <div className='titlebox'>
                         <h1>Total Cash In</h1>
-                        <h2>$$$$$$</h2>
+                        <h2>${totalCashIn} / mo</h2>
                     </div>
                     <hr /> <br />
                     <div className='listbox'>
