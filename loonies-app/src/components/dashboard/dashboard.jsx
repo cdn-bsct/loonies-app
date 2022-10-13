@@ -12,7 +12,7 @@ export default function Dashboard(props) {
             <hr />
             <h1>Net Cashflow</h1>
             <hr />
-            <LogOut user={props.user}/>
+            <LogOut user={props.user} handleLogout={props.handleLogout}/>
         </div>
     );
 }

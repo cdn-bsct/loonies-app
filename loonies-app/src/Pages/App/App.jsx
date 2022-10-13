@@ -18,6 +18,11 @@ class App extends Component {
     this.setState({ user: incomingUserData})
   }
 
+  handleLogout = async () => {
+    localStorage.removeItem('token')
+    this.setState({user: null})
+  }
+
   componentDidMount() { 
     let token = localStorage.getItem('token')
     if (token) {
@@ -38,10 +43,10 @@ class App extends Component {
       <main className="App">
         {this.state.user ?
         <Routes>
-         <Route path='/spend' element ={<SpendPage user={this.state.user}/>} />
-         <Route path='/save' element ={<SavePage user={this.state.user}/>} />
-         <Route path='/refs' element ={<RefsPage user={this.state.user}/>} /> 
-         <Route path='/*' element ={<EarnPage user={this.state.user}/>} /> 
+         <Route path='/spend' element ={<SpendPage user={this.state.user} logout={this.handleLogout}/>} />
+         <Route path='/save' element ={<SavePage user={this.state.user} logout={this.handleLogout}/>} />
+         <Route path='/refs' element ={<RefsPage user={this.state.user} logout={this.handleLogout}/>} /> 
+         <Route path='/*' element ={<EarnPage user={this.state.user} logout={this.handleLogout}/>} /> 
         </Routes>
         :
         <AuthPage setUserInState={this.setUserInState}/>

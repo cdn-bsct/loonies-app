@@ -27,7 +27,7 @@ export default class SavePage extends Component {
         return (
             <main className='HomePage'>
                 <aside>
-                    <Dashboard user={this.props.user}/>
+                    <Dashboard user={this.props.user} handleLogout={this.props.logout}/>
                 </aside>
                     <Save user={this.props.user} goals={this.state.goals}/>
             </main> 
