@@ -9,7 +9,6 @@ import SaveListItem from "../SaveListItem/SaveListItem";
 
 export default class Save extends Component {
 
-    
     handleSubmit = async (evt, goal) => {
         evt.preventDefault();
         try {
@@ -23,8 +22,10 @@ export default class Save extends Component {
             })
 
             if (!fetchResponse.ok) throw new Error('Fetch Failed - Bad Request')
+            
             let response = await fetchResponse.json()
-            this.setState({...this.state, goals: response})
+            this.props.handleAddSave(response)
+           
         } catch (err) {
             console.log('Add Saving Form Failed', err)
             this.setState({ error : 'Add Save Failed - Try Again'})
@@ -90,8 +91,11 @@ export default class Save extends Component {
                     </div>
 
                     <div className='listbox'>
-                      {goals[0] && goals[0].savings.map(el => <SaveListItem saving={el} handleDelete={this.handleDelete} goal={goals[0]._id}/>) }        
-                      {/* <span className="No Savings">You haven't saved toward your goal...</span> */}
+                      {this.props.savings.length > 0 ?
+                        this.props.savings.map(el => <SaveListItem saving={el} handleDelete={this.handleDelete} goal={goals[0]._id}/>)
+                      :
+                        <span className="No Savings">You haven't saved toward your goal...</span> 
+                      }
                     </div>
 
                     <br /><hr />
