@@ -28,9 +28,7 @@ async function create(req, res) {
 async function login(req, res) {
     try {
         const user = await User.find({ email: req.body.email })
-        console.log(req.body.email, user[0].email)
         const match = await bcrypt.compare(req.body.password, user[0].password)
-        console.log(match)
         if (match) {
             const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' })
             res.json(token)
