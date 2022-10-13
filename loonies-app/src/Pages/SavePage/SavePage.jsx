@@ -13,13 +13,7 @@ export default class SavePage extends Component {
     async componentDidMount() { 
         try {
             let jwt = localStorage.getItem('token')
-            let fetchSaveGoalResponse = await fetch('/api/savinggoals/index', {
-                method: "GET",
-                headers: {"Authorization": 'Bearer '+ jwt},
-                body: {
-                    user: this.props.user[0]._id
-                }
-            })
+            let fetchSaveGoalResponse = await fetch('/api/savinggoals/index', {headers: {"Authorization": 'Bearer '+ jwt}})
             if(!fetchSaveGoalResponse.ok) throw new Error('Could not fetch goals')
 
             let goals = await fetchSaveGoalResponse.json()
