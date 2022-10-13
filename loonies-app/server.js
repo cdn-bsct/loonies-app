@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api/users', require('./routes/api/users'))
 app.use(require('./config/auth'))
 app.use('/api/savinggoals', require('./routes/api/savinggoals.js'))
-// app.use('/api/cashflows', require('./routes/api/cashflows.js'))
+app.use('/api/cashflows', require('./routes/api/cashflows.js'))
 
 //catch all route
 app.get('/*', function(req, res) {

@@ -34,7 +34,6 @@ export default class Save extends Component {
 
     handleDelete = async (evt, save, goal) => {
         evt.preventDefault();
-        console.log(evt, save)
         const fetchResponse = await fetch('/api/savinggoals/savings/delete', {
             method: 'DELETE',
             headers: { "Content-Type": "application/json"},
@@ -45,14 +44,12 @@ export default class Save extends Component {
         })
         let response = await fetchResponse.json()
         this.props.handleDeleteSave(response)
-        // if (!fetchResponse.ok) throw new Error('Fetch Failed - BadRequest')
     }
 
     render () {
         let goals = this.props.goals
         let dropMenu =[]
         let currSaved = 0
-        let barWidth = 0
 
         this.props.savings.forEach((el) => {
             currSaved += el.amount
