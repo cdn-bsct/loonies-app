@@ -31,12 +31,27 @@ export default class Save extends Component {
         }
     }
 
+    handleDelete = async (evt, save, goal) => {
+        evt.preventDefault();
+        console.log(evt, save)
+        const fetchResponse = await fetch('/api/savinggoals/savings/delete', {
+            method: 'DELETE',
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify({
+                saving: save,
+                goal: goal
+            })
+        })
+
+        // if (!fetchResponse.ok) throw new Error('Fetch Failed - BadRequest')
+    }
+
     render () {
         let goals = this.props.goals
         let dropMenu =[]
 
         goals.forEach((el, idx) => {
-            if (!(idx == 0)) dropMenu.push(el)
+            if (!(idx === 0)) dropMenu.push(el)
         })
 
         return (
@@ -75,7 +90,7 @@ export default class Save extends Component {
                     </div>
 
                     <div className='listbox'>
-                      {goals[0] && goals[0].savings.map(el => <SaveListItem saving={el} />) }        
+                      {goals[0] && goals[0].savings.map(el => <SaveListItem saving={el} handleDelete={this.handleDelete} goal={goals[0]._id}/>) }        
                       {/* <span className="No Savings">You haven't saved toward your goal...</span> */}
                     </div>
 

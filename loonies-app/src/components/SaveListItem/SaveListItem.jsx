@@ -6,6 +6,7 @@ export default function SaveListItem(props) {
     return (
     <div className='listbox-cards'>
         <h5>Save deposit - {timestamp.toDateString()}</h5>
+        <button onClick={e => props.handleDelete(e, props.saving._id, props.goal)}> X </button>
         <h5>$ {props.saving.amount}</h5>
     </div>
     )

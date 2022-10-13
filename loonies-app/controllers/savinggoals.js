@@ -4,6 +4,15 @@ module.exports = {
     create,
     createSaving,
     index,
+    deleteSaving,
+}
+
+async function deleteSaving(req, res) {
+    const goal = await SavingGoal.findById(req.body.goal)
+    let saving = goal.savings.find(el => el._id == req.body.saving)
+    goal.savings.pop(saving)
+    goal.save()
+    res.status(200).json()
 }
 
 async function create(req, res) {
