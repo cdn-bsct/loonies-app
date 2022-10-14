@@ -13,7 +13,6 @@ const cashflowSchema = new Schema ({
     timestamps: true,
 })
 
-
 const userSchema = new Schema ({
     name: { type: String, required: true },
     email: {

@@ -16,7 +16,8 @@ export default class EarnPage extends Component {
     }
 
     handleDeleteCashflow = async (res) => {
-        this.setState({income: res.income})
+        let responseIncome = res.cashflow.filter(el => el.type === "Income")
+        this.setState({income: responseIncome})
     }
 
     async componentDidMount() { 
@@ -29,14 +30,17 @@ export default class EarnPage extends Component {
             let responseIncome = user.cashflow.filter(el => el.type === "Income")
             this.setState({ income: responseIncome })
         } catch(err) {
-            console.log('Get Goals Error', err)
+            console.log('Get Income Error', err)
         }
      }
     render() {
         return (
             <main className='HomePage'>
                 <aside>
-                    <Dashboard user={this.props.user} handleLogout={this.props.logout}/>
+                    <Dashboard 
+                        user={this.props.user} 
+                        handleLogout={this.props.logout}
+                    />
                 </aside>
                     <Earn 
                         user={this.props.user}

@@ -17,7 +17,6 @@ async function deleteSaving(req, res) {
 
 async function create(req, res) {
     try {
-        console.log(req.body)
         const newGoal = await SavingGoal.create(req.body)
         const goal = await SavingGoal.find({user: req.body.user})
         res.status(200).json(goal)
