@@ -40,7 +40,9 @@ async function createSaving(req, res) {
 
 async function index(req, res) {
     try {
+        console.log(req.body)
         const goals = await SavingGoal.find({user: req.user._id})
+        console.log(goals)
         res.status(200).json(goals)
     } catch(err) {
         console.log('Get saving goals error', err)

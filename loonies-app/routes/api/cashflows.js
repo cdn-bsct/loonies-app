@@ -8,6 +8,6 @@ router.get('/expense', cashflowsCtrl.cashflowIndex)
 router.post('/create', cashflowsCtrl.create)
 
 router.delete('/income/delete', cashflowsCtrl.deleteIncome)
-router.delete('/expense/delete', cashflowsCtrl.deleteIncome)
+router.delete('/expense/delete', cashflowsCtrl.deleteExpense)
 
 module.exports = router
