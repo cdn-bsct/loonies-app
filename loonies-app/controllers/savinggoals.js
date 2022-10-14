@@ -8,11 +8,15 @@ module.exports = {
 }
 
 async function deleteSaving(req, res) {
-    const goal = await SavingGoal.findById(req.body.goal)
-    let saving = goal.savings.find(el => el._id == req.body.saving)
-    goal.savings.pop(saving)
-    goal.save()
-    res.status(200).json(goal)
+    try {
+        const goal = await SavingGoal.findById(req.body.goal)
+        let saving = goal.savings.find(el => el._id == req.body.saving)
+        goal.savings.pop(saving)
+        goal.save()
+        res.status(200).json(goal)
+    } catch(err) {
+        res.status(400).json(err)
+    }
 }
 
 async function create(req, res) {
@@ -40,9 +44,8 @@ async function createSaving(req, res) {
 
 async function index(req, res) {
     try {
-        console.log(req.body)
+        console.log(req.user)
         const goals = await SavingGoal.find({user: req.user._id})
-        console.log(goals)
         res.status(200).json(goals)
     } catch(err) {
         console.log('Get saving goals error', err)

@@ -121,7 +121,11 @@ export default class Save extends Component {
 
                     <div className='listbox'>
                       {this.props.savings.length > 0 ?
-                        this.props.savings.map(el => <SaveListItem saving={el} handleDelete={this.handleDelete} goal={goals[0]._id}/>)
+                        this.props.savings.map(el => <SaveListItem 
+                                saving={el} 
+                                handleDelete={this.handleDelete} 
+                                goal={goals[0]._id}
+                            />)
                       :
                         <span className="No Savings">You haven't saved toward your goal...</span> 
                       }

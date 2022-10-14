@@ -14,7 +14,7 @@ export default class CashFlowForm extends Component {
     handleChange = async (evt) => {
         this.setState({
             [evt.target.name]: evt.target.value,
-            user: this.props.user[0]._id
+            user: this.props.user._id
         })
     }
 

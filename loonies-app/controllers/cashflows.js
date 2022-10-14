@@ -47,7 +47,7 @@ async function create(req, res) {
 
 async function cashflowIndex(req, res) {
     try {
-        const user = await User.findById(req.user[0]._id)
+        const user = await User.findById(req.user._id)
         res.status(200).json(user)
     } catch (err) {
         console.log('Income Index Fetch Error', err)

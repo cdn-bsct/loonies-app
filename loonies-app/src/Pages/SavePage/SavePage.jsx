@@ -17,7 +17,7 @@ export default class SavePage extends Component {
     }
 
     handleAddGoal = async (res) => {
-        this.setState({goal: res})
+        this.setState({goals: res})
     }
 
     handleDeleteSave = async (res) => {
