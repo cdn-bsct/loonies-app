@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+<img src="https://i.imgur.com/SYZ6wKK.png">
+<hr/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LoonieMax
+LoonieMax is a personal cash flow manager. It is a web application focused program. Although, it still needs a lot of work, the bare bones is here.
 
-## Available Scripts
+<img src="https://i.imgur.com/05XzJXP.png">
 
-In the project directory, you can run:
+## Basic Login and Sign up fields
+<img src="https://i.imgur.com/s0YDWiV.png" style="width:50%">
 
-### `npm start`
+<img src="https://i.imgur.com/egiVAAq.png" style="width:50%">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Below are shots of the basic SPA webpage
+<img src="https://i.imgur.com/yjNbTCg.png" style="width:50%">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img src="https://i.imgur.com/y1AI8WI.png" style="width:50%">
 
-### `npm test`
+<img src="https://i.imgur.com/3vqCLQF.png" style="width:50%">
+<hr/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://i.imgur.com/zVysQtt.png">
 
-### `npm run build`
+<img src="https://imgs.search.brave.com/2c-rpw2beWY82ct96XGMixYjOhfDrrwntVbovAlw1rA/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/d0ZkajM3anY5WXhM/dGhPdDZzeUFRSGFI/YSZwaWQ9QXBp" style="width:25%"> <img src="https://imgs.search.brave.com/AgpEciMnexRsUpRcY3uNhfsgZnvFO9e8zidzNmS69fc/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC40/eTBPNFl0azVNQXJZ/RFZFS01haExRSGFI/YSZwaWQ9QXBp" style="width:25%;">   
+<img src="https://imgs.search.brave.com/UIhzVsF-w_gDF0EyaoHxcsiUqQF6TQtJVGgrHc_FJ0U/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5G/aEJTRTQtbmtUYkFS/MFVoa0d0VjRnSGFI/YSZwaWQ9QXBp" style="width:25%;">  <img src="https://imgs.search.brave.com/T5lpjYPFfTU2zPCYhLcabg-lALOgcU63dM04FCkoPHQ/rs:fit:900:900:1/g:ce/aHR0cHM6Ly9wbHVz/cG5nLmNvbS9pbWct/cG5nL3JlYWN0LWxv/Z28tcG5nLXJlYWN0/LWxvZ28tcG5nLWlt/Zy05MDAtOTAwLWZy/ZWUtdHJhbnNwYXJl/bnQtcmVhY3QtcG5n/LTkwMHg5MDAuanBn" style="width:25%;">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://i.imgur.com/fG6ceEB.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Alright, enough chatter.. lets take a look at it.. *gulps*
+<hr>
+[Github Repo Link](https://github.com/cdn-bsct/loonies-app/tree/main/loonies-app) | 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Trello](https://trello.com/b/oU224YYS/project-4-cash-flow) | [Lucid Chart](https://lucid.app/lucidchart/a4edb6a5-299c-43ec-8302-819bb9714720/edit?page=0_0&invitationId=inv_355285f7-364b-43ae-9efd-ac998d171ec4#) | [WireFrame](https://wireframepro.mockflow.com/editor.jsp?editor=off&publicid=Me209f888410d57a12f41873155f0b2581665447599439&projectid=MKVbVIxmqob&perm=Owner#/page/a107b3e9cd27458d9587c3ac3da9cad9/sidebar/off)
 
-### `npm run eject`
+<img src="https://i.imgur.com/3CTKrsg.png">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Some Icebox features and next steps to be done:
+- Implement a survey that asks the client a series of questions to recommend a saving plan.
+- implement webscraping to a popular budgeting blog.
+- fix the styling to be more modern and intriguing.
+- make the code more DRY and less repetitive.
+- Fix components and how data is processed.
